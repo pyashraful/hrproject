@@ -1,5 +1,5 @@
 // import { Paper } from "@mui/material";
-import Paper from "@mui/material/Paper";
+import Paper from '@mui/material/Paper';
 
 function FromContainer() {
   return <Paper>hello</Paper>;
