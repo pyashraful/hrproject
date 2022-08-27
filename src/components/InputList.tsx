@@ -11,6 +11,7 @@ import FolderIcon from '@mui/icons-material/Folder';
 import AddIcon from '@mui/icons-material/Add';
 import { useAppSelector, useAppDispatch } from '../hook/reduxhooks';
 import { allFields } from '../features/field/filedSlice';
+import { addFormField, field } from '../features/form/formSlice';
 
 const Demo = styled('div')(({ theme }) => ({
   backgroundColor: theme.palette.background.paper,
@@ -23,8 +24,9 @@ export default function InteractiveList() {
   const dispatch = useAppDispatch();
   const items = useAppSelector(allFields);
 
-  function addToForm() {
-    console.log('addToList');
+  function addToForm(item: field) {
+    let newItem = { ...item, id: items.length + 1 };
+    dispatch(addFormField(newItem));
   }
 
   return (
@@ -37,7 +39,7 @@ export default function InteractiveList() {
               <IconButton
                 edge="end"
                 aria-label="Add"
-                onClick={() => console.log('hi')}
+                onClick={() => addToForm(item)}
               >
                 <AddIcon />
               </IconButton>

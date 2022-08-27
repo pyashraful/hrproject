@@ -1,6 +1,6 @@
-import { Container, Grid } from "@mui/material";
-import FromContainer from "./FromContainer";
-import SideBar from "./SideBar";
+import { Container, Grid } from '@mui/material';
+import FromContainer from '../features/form/FromContainer';
+import SideBar from './SideBar';
 
 function Home() {
   return (
