@@ -1,19 +1,17 @@
-import { Container, Grid } from '@mui/material';
+import { Grid, GridItem } from '@chakra-ui/react';
 import FromContainer from '../features/form/FromContainer';
 import SideBar from './SideBar';
 
 function Home() {
   return (
-    <Container>
-      <Grid container spacing={2}>
-        <Grid item lg={4}>
-          <SideBar />
-        </Grid>
-        <Grid item lg={8}>
-          <FromContainer />
-        </Grid>
-      </Grid>
-    </Container>
+    <Grid templateRows="repete(2, 1ref)" templateColumns="repeat(5, 1fr)">
+      <GridItem>
+        <SideBar />
+      </GridItem>
+      <GridItem colSpan={4}>
+        <FromContainer />
+      </GridItem>
+    </Grid>
   );
 }
 

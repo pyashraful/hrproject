@@ -1,10 +1,11 @@
 import Home from './components/Home';
+import { Container } from '@chakra-ui/react';
 
 function App() {
   return (
-    <div>
+    <Container maxW="container.sm">
       <Home />
-    </div>
+    </Container>
   );
 }
 

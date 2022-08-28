@@ -1,11 +1,10 @@
-import Paper from '@mui/material/Paper';
 import InputList from './InputList';
 
 function SideBar() {
   return (
-    <Paper sx={{ height: '100%' }}>
+    <div>
       <InputList />
-    </Paper>
+    </div>
   );
 }
 
