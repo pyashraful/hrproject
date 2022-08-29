@@ -1,11 +1,7 @@
 import InputList from './InputList';
 
 function SideBar() {
-  return (
-    <div>
-      <InputList />
-    </div>
-  );
+  return <InputList />;
 }
 
 export default SideBar;

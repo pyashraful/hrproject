@@ -3,7 +3,7 @@ import { Container } from '@chakra-ui/react';
 
 function App() {
   return (
-    <Container maxW="container.sm">
+    <Container minW="container.lg">
       <Home />
     </Container>
   );

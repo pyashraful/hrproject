@@ -1,3 +1,4 @@
+import { Box } from '@chakra-ui/react';
 import { useAppSelector, useAppDispatch } from '../../hook/reduxhooks';
 import { allFormFields } from './formSlice';
 import FormInputContainer from './fromInput/FormInputContainer';
@@ -7,13 +8,13 @@ function FromContainer() {
   const items = useAppSelector(allFormFields);
 
   return (
-    <div>
+    <Box borderWidth="1px" borderRadius="lg" height="100%" p="4">
       {items.map((item, index) => (
         <div key={index}>
           <FormInputContainer item={item} />
         </div>
       ))}
-    </div>
+    </Box>
   );
 }
 
