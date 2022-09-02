@@ -9,11 +9,11 @@ type field = {
 const initialState = [
   {
     id: 1,
-    name: 'name',
+    name: 'Name',
   },
   {
     id: 2,
-    name: 'email',
+    name: 'Email',
   },
 ];
 
