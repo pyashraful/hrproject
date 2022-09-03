@@ -1,0 +1,60 @@
+export const field = [
+  {
+    id: 'short-text',
+    name: 'Short Text',
+    description: 'Add description',
+    require: false,
+    type: 'text',
+    hidden: false,
+  },
+  {
+    id: 'long-text',
+    name: 'Long Text',
+    description: 'Add description',
+    require: false,
+    type: 'textbox',
+    hidden: false,
+  },
+  {
+    id: 'email',
+    name: 'Email',
+    description: 'Add description',
+    require: false,
+    type: 'email',
+    hidden: false,
+  },
+  {
+    id: 'phone',
+    name: 'Phone',
+    description: 'Add description',
+    require: false,
+    type: 'tel',
+    hidden: false,
+  },
+  {
+    id: 'number',
+    name: 'Number',
+    description: 'Add description',
+    require: false,
+    type: 'number',
+    hidden: false,
+  },
+  {
+    id: 'single-select',
+    name: 'Single Select',
+    description: 'Add description',
+    require: false,
+    type: 'select',
+    hidden: false,
+    options: [
+      {
+        id: 'option-1',
+        name: 'Option 1',
+      },
+      {
+        id: 'option-2',
+        name: 'Option 2',
+      },
+    ],
+  },
+];
