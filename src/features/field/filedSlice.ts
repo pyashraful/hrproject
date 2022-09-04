@@ -1,27 +1,19 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../store';
+import { field, Field } from '../../data';
 
-type field = {
-  id: number;
-  name: string;
-};
+// type field = {
+//   id: number;
+//   name: string;
+// };
 
-const initialState = [
-  {
-    id: 1,
-    name: 'Name',
-  },
-  {
-    id: 2,
-    name: 'Email',
-  },
-];
+const initialState = field;
 
 const filedSlice = createSlice({
   name: 'field',
   initialState: initialState,
   reducers: {
-    addField: (state, action: PayloadAction<field>) => {
+    addField: (state, action: PayloadAction) => {
       state.push(action.payload);
     },
   },

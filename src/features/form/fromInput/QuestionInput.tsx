@@ -1,16 +1,15 @@
 import {
   EditablePreview,
-  Box,
   useColorModeValue,
   Input,
   Editable,
   EditableInput,
 } from '@chakra-ui/react';
 
-function QuestionInput() {
+function QuestionInput({ item }) {
   return (
     <Editable
-      defaultValue="Short Question"
+      defaultValue={item.name}
       onBlur={() => console.log('f')}
       sx={{ fontSize: 'xl', fontWeight: 'bold' }}
     >

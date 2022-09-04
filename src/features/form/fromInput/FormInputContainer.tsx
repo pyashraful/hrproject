@@ -1,15 +1,47 @@
+import { useState, useReducer, useRef } from 'react';
 import { Box, Button, Collapse, Stack, useDisclosure } from '@chakra-ui/react';
+import { useOutsideClick } from '@chakra-ui/react';
 import QuestionInput from './QuestionInput';
 import InputDiscription from './InputDiscription';
 import AnswerInputDisable from './AnswerInputDisable';
 import FromInputAction from './FromInputAction';
 
-export default function FormInputContainer() {
-  const { isOpen, onToggle } = useDisclosure();
+// function collapseRuducer(state, action) {
+//   switch (action.type) {
+//     case 'toggle':
+//       return {
+//         isDiscriptionOpen: !state.isDiscriptionOpen,
+//         isActionOpen: !state.isActionOpen,
+//       };
+//     case 'discriptionCollapse':
+//       return {
+//         ...state,
+//         isDiscriptionOpen: true,
+//       };
+//     default:
+//       throw new Error();
+//   }
+// }
+
+// const initialState = {
+//   isDiscriptionOpen: false,
+//   isActionOpen: false,
+// };
+
+export default function FormInputContainer({ item }) {
+  console.log(
+    '🚀 ~ file: FormInputContainer.tsx ~ line 32 ~ FormInputContainer ~ itme',
+    item
+  );
+  // const ref = useRef();
+  // const [state, dispatch] = useReducer(collapseRuducer, initialState);
+  // console.log(
+  //   '🚀 ~ file: FormInputContainer.tsx ~ line 29 ~ FormInputContainer ~ state',
+  //   state
+  // );
 
   return (
     <Box>
-      <Button onClick={onToggle}>Toggle</Button>
       <Stack
         rounded="md"
         shadow="md"
@@ -18,14 +50,18 @@ export default function FormInputContainer() {
         borderRadius="lg"
         mb={2}
       >
-        <QuestionInput />
-        <Collapse style={{ margin: 0 }} in={isOpen} animateOpacity>
-          <InputDiscription />
-        </Collapse>
+        <QuestionInput item={item} />
+        {/* <Collapse
+          style={{ margin: 0 }}
+          in={state.isDiscriptionOpen}
+          animateOpacity
+        > */}
+        <InputDiscription />
+        {/* </Collapse> */}
         <AnswerInputDisable />
-        <Collapse style={{ margin: 0 }} in={isOpen}>
-          <FromInputAction />
-        </Collapse>
+        {/* <Collapse style={{ margin: 0 }} in={state.isActionOpen}> */}
+        <FromInputAction />
+        {/* </Collapse> */}
       </Stack>
     </Box>
   );

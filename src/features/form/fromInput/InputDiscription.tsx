@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   EditablePreview,
   useColorModeValue,
@@ -7,8 +8,20 @@ import {
 } from '@chakra-ui/react';
 
 export default function InputDiscription() {
+  const [value, setValue] = useState('Add Discription');
+  console.log(
+    '🚀 ~ file: InputDiscription.tsx ~ line 12 ~ InputDiscription ~ value',
+    value
+  );
+  const handleChange = (event) => setValue(event.target.value);
+  // const shouldCollaps = () => {
+  //   if (value !== '"Add Discription"') {
+  //     dispatch({ type: 'discriptionCollapse' });
+  //   }
+  // };
+
   return (
-    <Editable defaultValue="Add Discription" onBlur={() => console.log('f')}>
+    <Editable defaultValue="Add Discription">
       <EditablePreview
         py={2}
         px={4}
@@ -19,7 +32,8 @@ export default function InputDiscription() {
       <Input
         py={2}
         px={4}
-        onFocus={() => console.log('t')}
+        onChange={(event) => handleChange(event)}
+        // onFocus={() => shouldCollaps}
         as={EditableInput}
       />
     </Editable>

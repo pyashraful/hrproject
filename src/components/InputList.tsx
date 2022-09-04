@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useRef } from 'react';
 import { useAppSelector, useAppDispatch } from '../hook/reduxhooks';
 import { allFields } from '../features/field/filedSlice';
 import { addFormField, field } from '../features/form/formSlice';
@@ -25,19 +25,20 @@ const StyleListItem = chakra(List, {
 });
 
 export default function InteractiveList() {
+  let ref = useRef(0);
   const dispatch = useAppDispatch();
   const items = useAppSelector(allFields);
 
   function addToForm(item: field) {
-    let newItem = { ...item, id: items.length + 1 };
+    let newItem = { ...item, id: `${item.id}-${ref.current++}` };
     dispatch(addFormField(newItem));
   }
 
   return (
     <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
       <StyleList spacing={2}>
-        {items.map((item) => (
-          <StyleListItem key={item.id} onClick={() => addToForm(item)}>
+        {items.map((item, index) => (
+          <StyleListItem key={item.id} onClick={() => addToForm(item, index)}>
             <div>{item.name}</div>
             <IconButton
               size={'sm'}
