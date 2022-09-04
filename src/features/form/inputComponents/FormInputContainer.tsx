@@ -2,7 +2,7 @@ import { useState, useReducer, useRef } from 'react';
 import { Box, Button, Collapse, Stack, useDisclosure } from '@chakra-ui/react';
 import { useOutsideClick } from '@chakra-ui/react';
 import QuestionInput from './QuestionInput';
-import InputDiscription from './InputDiscription';
+import InputDiscription from './Discription';
 import AnswerInputDisable from './AnswerInputDisable';
 import FromInputAction from './FromInputAction';
 
@@ -29,10 +29,6 @@ import FromInputAction from './FromInputAction';
 // };
 
 export default function FormInputContainer({ item }) {
-  console.log(
-    '🚀 ~ file: FormInputContainer.tsx ~ line 32 ~ FormInputContainer ~ itme',
-    item
-  );
   // const ref = useRef();
   // const [state, dispatch] = useReducer(collapseRuducer, initialState);
   // console.log(

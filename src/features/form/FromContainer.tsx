@@ -1,7 +1,9 @@
 import { Box } from '@chakra-ui/react';
 import { useAppSelector, useAppDispatch } from '../../hook/reduxhooks';
 import { allFormFields } from './formSlice';
-import FormInputContainer from './fromInput/FormInputContainer';
+
+import LongText from './questions/LongText';
+import ShortText from './questions/ShortText';
 
 function FromContainer() {
   const dispatch = useAppDispatch();
@@ -19,7 +21,11 @@ function FromContainer() {
 
           switch (type) {
             case 'text':
-              return <FormInputContainer item={item} key={item.id} />;
+              return <ShortText item={item} key={item.id} />;
+            case 'textbox':
+              return <LongText item={item} key={item.id} />;
+            case 'email':
+              return <ShortText item={item} key={item.id} />;
             default:
               return null;
           }
