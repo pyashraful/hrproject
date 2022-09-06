@@ -1,16 +1,28 @@
 import DeleteButton from './DeleteButton';
 import HideButton from './HideButton';
 import RequireSwitchButton from './RequireSwitchButton';
-import { Box, Spacer, Stack } from '@chakra-ui/react';
+import { Spacer, Stack } from '@chakra-ui/react';
+import { useAppSelector, useAppDispatch } from '../../../hook/reduxhooks';
+import { deleteFormField } from '../formSlice';
 
-function FromInputAction() {
+function FromInputAction({ item }) {
+  console.log(
+    '🚀 ~ file: FromInputAction.tsx ~ line 9 ~ FromInputAction ~ item',
+    item
+  );
+  const dispatch = useAppDispatch();
+
+  function handleDelete() {
+    dispatch(deleteFormField(item.id));
+  }
+
   return (
     <Stack direction="row" sx={{ p: 2 }}>
       <RequireSwitchButton />
       <Spacer />
       <Stack direction="row" spacing={2} alignItems="center">
         <HideButton />
-        <DeleteButton />
+        <DeleteButton onClick={handleDelete} />
       </Stack>
     </Stack>
   );

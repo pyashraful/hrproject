@@ -7,11 +7,8 @@ import { itemProps } from './type';
 
 function LongText({ item }: itemProps) {
   return (
-    <FromBox>
-      <QuestionInput item={item} />
-      <InputDiscription />
+    <FromBox item={item}>
       <AnswerInputDisable />
-      <FromInputAction />
     </FromBox>
   );
 }

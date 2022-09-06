@@ -7,13 +7,10 @@ import { itemProps } from './type';
 
 function SingleSelect({ item }: itemProps) {
   return (
-    <FromBox>
-      <QuestionInput item={item} />
-      <InputDiscription />
+    <FromBox item={item}>
       <Option />
       <Option />
       <Option />
-      <FromInputAction />
     </FromBox>
   );
 }

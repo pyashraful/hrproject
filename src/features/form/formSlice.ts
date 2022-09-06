@@ -22,11 +22,13 @@ const formSlice = createSlice({
     addFormField: (state, action: PayloadAction) => {
       state.push(action.payload);
     },
+    deleteFormField: (state, action: PayloadAction) => {
+      return state.filter((field) => field.id !== action.payload);
+    },
   },
 });
 
 export const allFormFields = (state: RootState) => state.form;
-// export const allFields = useAppSelector((state) => state.filed);
 
-export const { addFormField } = formSlice.actions;
+export const { addFormField, deleteFormField } = formSlice.actions;
 export default formSlice.reducer;

@@ -8,11 +8,8 @@ import PhoneAnswerInput from '../inputComponents/PhoneAnswerInput';
 
 function Phone({ item }: itemProps) {
   return (
-    <FromBox>
-      <QuestionInput item={item} />
-      <InputDiscription />
+    <FromBox item={item}>
       <PhoneAnswerInput />
-      <FromInputAction />
     </FromBox>
   );
 }

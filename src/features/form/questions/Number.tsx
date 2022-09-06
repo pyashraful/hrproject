@@ -8,11 +8,8 @@ import AnswerNumberInput from '../inputComponents/AnswerNumberInput';
 
 function LongText({ item }: itemProps) {
   return (
-    <FromBox>
-      <QuestionInput item={item} />
-      <InputDiscription />
+    <FromBox item={item}>
       <AnswerNumberInput />
-      <FromInputAction />
     </FromBox>
   );
 }
