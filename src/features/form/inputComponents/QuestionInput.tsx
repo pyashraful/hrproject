@@ -6,10 +6,35 @@ import {
   EditableInput,
 } from '@chakra-ui/react';
 
-function QuestionInput({ item }) {
+import React, { useState } from 'react';
+import useAutoSave from '../../../hook/useAutoSave';
+import { itemProps } from '../questions/type';
+
+function QuestionInput({ item }: itemProps) {
+  const [value, setValue] = useState(() => {
+    // getting stored value
+    const saved = localStorage.getItem(item.id);
+    const initialValue = JSON.parse(saved);
+    return initialValue || item.name;
+  });
+  console.log(
+    '🚀 ~ file: QuestionInput.tsx ~ line 13 ~ QuestionInput ~ value',
+    value
+  );
+
+  const isSaved = useAutoSave(item.id, value);
+  console.log(
+    '🚀 ~ file: QuestionInput.tsx ~ line 26 ~ QuestionInput ~ isSaved',
+    isSaved
+  );
+
+  const onchange = (e: React.SyntheticEvent) => {
+    setValue(e.target.value);
+  };
+
   return (
     <Editable
-      defaultValue={item.name}
+      defaultValue={value}
       onBlur={() => console.log('f')}
       sx={{ fontSize: 'xl', fontWeight: 'bold' }}
     >
@@ -25,6 +50,7 @@ function QuestionInput({ item }) {
         py={2}
         px={4}
         onFocus={() => console.log('t')}
+        onChange={(e) => onchange(e)}
         as={EditableInput}
       />
     </Editable>
