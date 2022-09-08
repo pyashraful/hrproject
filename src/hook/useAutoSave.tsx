@@ -1,6 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 
-export default function useAutoSave(sotrageId, value, delay = 1000) {
+export default function useAutoSave(
+  storageId: string,
+  value: string,
+  delay = 1000
+) {
+  console.log('🚀 ~ file: useAutoSave.tsx ~ line 13 ~ storageId', storageId);
   const prevData = useRef(value);
   const [saveState, setSaveState] = useState('saved');
 
@@ -18,7 +23,7 @@ export default function useAutoSave(sotrageId, value, delay = 1000) {
     if (haseDataChanged) {
       timerId = setTimeout(() => {
         setSaveState('saving');
-        delayedSave(sotrageId, JSON.stringify(prevData.current)).then(() => {
+        delayedSave(storageId, JSON.stringify(prevData.current)).then(() => {
           setSaveState('saved');
         });
       }, delay);
@@ -27,13 +32,13 @@ export default function useAutoSave(sotrageId, value, delay = 1000) {
     return () => {
       clearTimeout(timerId);
     };
-  }, [sotrageId, value, delay]);
+  }, [storageId, value, delay]);
 
   return saveState;
 }
 
-function delayedSave(storageId, value) {
-  return new Promise((resolve, reject) => {
+function delayedSave(storageId: string, value: string) {
+  return new Promise<void>((resolve, reject) => {
     setTimeout(() => {
       localStorage.setItem(storageId, value);
       resolve();
