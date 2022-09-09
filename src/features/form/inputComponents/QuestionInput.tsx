@@ -6,7 +6,7 @@ import {
   EditableInput,
 } from '@chakra-ui/react';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import useAutoSave from '../../../hook/useAutoSave';
 import { itemProps } from '../questions/type';
 
@@ -28,7 +28,7 @@ function QuestionInput({ item }: itemProps) {
     isSaved
   );
 
-  const onchange = (e: React.SyntheticEvent) => {
+  const onchange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
 
