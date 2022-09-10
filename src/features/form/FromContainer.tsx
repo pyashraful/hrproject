@@ -19,7 +19,7 @@ function FromContainer() {
 
   return (
     <Box borderWidth="1px" borderRadius="lg" height="100%" p="4">
-      {items.map((item, index) => {
+      {items.fields?.map((item, index) => {
         let type = item.type;
 
         switch (type) {

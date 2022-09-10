@@ -3,10 +3,10 @@ import QuestionInput from '../inputComponents/QuestionInput';
 import InputDiscription from '../inputComponents/Discription';
 import AnswerInputDisable from '../inputComponents/AnswerInputDisable';
 import FromBox from '../inputComponents/FromBox';
-import { itemProps } from './type';
+import { itemsProps } from './type';
 import PhoneAnswerInput from '../inputComponents/PhoneAnswerInput';
 
-function Phone({ item }: itemProps) {
+function Phone({ item }: itemsProps) {
   return (
     <FromBox item={item}>
       <PhoneAnswerInput />

@@ -1,5 +1,7 @@
+import { InputProps } from '@chakra-ui/react';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../store';
+import { itemsProps, Item } from './questions/type';
 
 // export type field = {
 //   id: number;
@@ -13,17 +15,26 @@ import { RootState } from '../../store';
 //   },
 // ];
 
-const initialState = [];
+type InitialState = {
+  fields: Item[];
+};
+
+const initialState: InitialState = {
+  fields: [],
+};
 
 const formSlice = createSlice({
   name: 'form',
   initialState: initialState,
   reducers: {
-    addFormField: (state, action: PayloadAction) => {
-      state.push(action.payload);
+    addFormField: (state, action: PayloadAction<Item>) => {
+      state.fields.push(action.payload);
     },
-    deleteFormField: (state, action: PayloadAction) => {
-      return state.filter((field) => field.id !== action.payload);
+    deleteFormField: (state, action: PayloadAction<string>) => {
+      return state.fields.filter((field) => {
+        console.log(field.id);
+        return field.id !== action.payload;
+      });
     },
   },
 });

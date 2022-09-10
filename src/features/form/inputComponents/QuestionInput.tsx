@@ -8,19 +8,17 @@ import {
 
 import { useState } from 'react';
 import useAutoSave from '../../../hook/useAutoSave';
-import { itemProps } from '../questions/type';
+import { itemsProps } from '../questions/type';
 
-function QuestionInput({ item }: itemProps) {
+function QuestionInput({ item }: itemsProps) {
   const [value, setValue] = useState(() => {
     // getting stored value
     const saved = localStorage.getItem(item.id);
-    const initialValue = JSON.parse(saved);
-    return initialValue || item.name;
+    if (saved) {
+      const initialValue = JSON.parse(saved);
+      return initialValue || item.name;
+    }
   });
-  console.log(
-    '🚀 ~ file: QuestionInput.tsx ~ line 13 ~ QuestionInput ~ value',
-    value
-  );
 
   const isSaved = useAutoSave(item.id, value);
   console.log(
