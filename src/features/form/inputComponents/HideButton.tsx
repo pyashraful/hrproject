@@ -1,4 +1,4 @@
-import { MdOutlineVisibility, MdOutlineVisibilityOff } from 'react-icons/md';
+import { MdOutlineVisibilityOff } from 'react-icons/md';
 import { Button } from '@chakra-ui/react';
 import React from 'react';
 
