@@ -1,4 +1,4 @@
-export type Item = {
+export type ItemProps = {
   id: string;
   name: string;
   type: string;
@@ -8,6 +8,6 @@ export type Item = {
   hidden: boolean;
 };
 
-export type itemsProps = {
-  item: [Item];
+export type InitialStateProps = {
+  fields: ItemProps[];
 };

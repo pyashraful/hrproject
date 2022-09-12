@@ -5,6 +5,7 @@ import QuestionInput from './QuestionInput';
 import InputDiscription from './Discription';
 import AnswerInputDisable from './AnswerInputDisable';
 import FromInputAction from './FromInputAction';
+import { ItemProps } from '../questions/type';
 
 // function collapseRuducer(state, action) {
 //   switch (action.type) {
@@ -28,7 +29,7 @@ import FromInputAction from './FromInputAction';
 //   isActionOpen: false,
 // };
 
-export default function FormInputContainer({ item }) {
+export default function FormInputContainer({ item }: { item: ItemProps }) {
   // const ref = useRef();
   // const [state, dispatch] = useReducer(collapseRuducer, initialState);
   // console.log(
@@ -56,7 +57,7 @@ export default function FormInputContainer({ item }) {
         {/* </Collapse> */}
         <AnswerInputDisable />
         {/* <Collapse style={{ margin: 0 }} in={state.isActionOpen}> */}
-        <FromInputAction />
+        <FromInputAction item={item} />
         {/* </Collapse> */}
       </Stack>
     </Box>

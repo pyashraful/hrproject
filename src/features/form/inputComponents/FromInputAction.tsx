@@ -4,8 +4,9 @@ import RequireSwitchButton from './RequireSwitchButton';
 import { Spacer, Stack } from '@chakra-ui/react';
 import { useAppSelector, useAppDispatch } from '../../../hook/reduxhooks';
 import { deleteFormField } from '../formSlice';
+import { ItemProps } from '../questions/globalType';
 
-function FromInputAction({ item }) {
+function FromInputAction({ item }: { item: ItemProps }) {
   console.log(
     '🚀 ~ file: FromInputAction.tsx ~ line 9 ~ FromInputAction ~ item',
     item

@@ -1,25 +1,14 @@
-import { InputProps } from '@chakra-ui/react';
+// eslint-disable-next-line import/named
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../store';
-import { itemsProps, Item } from './questions/type';
+import { InitialStateProps, ItemProps } from './questions/globalType';
 
 // export type field = {
 //   id: number;
 //   name: string;
 // };
 
-// const initialState: field[] = [
-//   {
-//     id: 1,
-//     name: 'name',
-//   },
-// ];
-
-type InitialState = {
-  fields: Item[];
-};
-
-const initialState: InitialState = {
+const initialState: InitialStateProps = {
   fields: [],
 };
 
@@ -27,14 +16,13 @@ const formSlice = createSlice({
   name: 'form',
   initialState: initialState,
   reducers: {
-    addFormField: (state, action: PayloadAction<Item>) => {
+    addFormField: (state, action: PayloadAction<ItemProps>) => {
       state.fields.push(action.payload);
     },
     deleteFormField: (state, action: PayloadAction<string>) => {
-      return state.fields.filter((field) => {
-        console.log(field.id);
-        return field.id !== action.payload;
-      });
+      state.fields = state.fields.filter(
+        (field) => field.id !== action.payload
+      );
     },
   },
 });

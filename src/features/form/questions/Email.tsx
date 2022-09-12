@@ -1,9 +1,9 @@
 import AnswerInputDisable from '../inputComponents/AnswerInputDisable';
 import InputDiscription from '../inputComponents/Discription';
 import FromBox from '../inputComponents/FromBox';
-import { itemsProps } from './type';
+// import { ItemProps } from './type';
 
-function Email({ item }: itemsProps) {
+function Email({ item }: { item: ItemProps }) {
   return (
     <FromBox item={item}>
       <AnswerInputDisable />

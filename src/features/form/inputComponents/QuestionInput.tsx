@@ -8,9 +8,9 @@ import {
 
 import { useState } from 'react';
 import useAutoSave from '../../../hook/useAutoSave';
-import { itemsProps } from '../questions/type';
+import { ItemProps } from '../questions/globalType';
 
-function QuestionInput({ item }: itemsProps) {
+function QuestionInput({ item }: { item: ItemProps }) {
   const [value, setValue] = useState(() => {
     // getting stored value
     const saved = localStorage.getItem(item.id);
