@@ -5,7 +5,7 @@ import QuestionInput from './QuestionInput';
 import InputDiscription from './Discription';
 import AnswerInputDisable from './AnswerInputDisable';
 import FromInputAction from './FromInputAction';
-import { ItemProps } from '../questions/type';
+import { ItemProps } from '../../../globalType';
 
 // function collapseRuducer(state, action) {
 //   switch (action.type) {

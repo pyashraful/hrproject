@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/named
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../store';
-import { InitialStateProps, ItemProps } from './questions/globalType';
+import { InitialStateProps, ItemProps } from '../../globalType';
 
 // export type field = {
 //   id: number;

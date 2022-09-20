@@ -4,7 +4,7 @@ import AnswerInputDisable from './AnswerInputDisable';
 import InputDiscription from './Discription';
 import FromInputAction from './FromInputAction';
 import QuestionInput from './QuestionInput';
-import { ItemProps } from '../questions/globalType';
+import { ItemProps } from '../../../globalType';
 
 type BoxProps = {
   children: React.ReactNode;
