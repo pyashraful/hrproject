@@ -3,11 +3,6 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../store';
 import { InitialStateProps, ItemProps } from '../../globalType';
 
-// export type field = {
-//   id: number;
-//   name: string;
-// };
-
 const initialState: InitialStateProps = {
   fields: [],
 };

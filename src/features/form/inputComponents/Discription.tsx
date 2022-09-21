@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import {
   EditablePreview,
   useColorModeValue,
@@ -13,7 +13,8 @@ export default function InputDiscription() {
     '🚀 ~ file: InputDiscription.tsx ~ line 12 ~ InputDiscription ~ value',
     value
   );
-  const handleChange = (event) => setValue(event.target.value);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>
+    setValue(event.target.value);
   // const shouldCollaps = () => {
   //   if (value !== '"Add Discription"') {
   //     dispatch({ type: 'discriptionCollapse' });
