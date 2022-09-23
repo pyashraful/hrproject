@@ -16,9 +16,10 @@ function QuestionInput({ item }: { item: ItemProps }) {
     const saved = localStorage.getItem(item.id);
     if (saved) {
       const initialValue = JSON.parse(saved);
-      return initialValue || item.name;
+      return initialValue ? initialValue : item.name;
     }
   });
+  console.log('🚀 ~ file: QuestionInput.tsx ~ line 22 ~  value', value);
 
   const isSaved = useAutoSave(item.id, value);
   console.log(

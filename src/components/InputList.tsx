@@ -1,9 +1,10 @@
 import { useRef } from 'react';
 import { useAppSelector, useAppDispatch } from '../hook/reduxhooks';
 import { allFields } from '../features/field/filedSlice';
-import { addFormField, field } from '../features/form/formSlice';
-import { Box, List, ListItem, chakra, IconButton } from '@chakra-ui/react';
+import { addFormField } from '../features/form/formSlice';
+import { Box, List, chakra, IconButton } from '@chakra-ui/react';
 import { MdOutlineAdd } from 'react-icons/md';
+import { ItemProps } from '../globalType';
 
 const StyleList = chakra(List, {
   baseStyle: {
@@ -29,7 +30,7 @@ export default function InteractiveList() {
   const dispatch = useAppDispatch();
   const items = useAppSelector(allFields);
 
-  function addToForm(item: field) {
+  function addToForm(item: ItemProps) {
     let newItem = { ...item, id: `${item.id}-${ref.current++}` };
     dispatch(addFormField(newItem));
   }
@@ -37,8 +38,8 @@ export default function InteractiveList() {
   return (
     <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
       <StyleList spacing={2}>
-        {items.map((item, index) => (
-          <StyleListItem key={item.id} onClick={() => addToForm(item, index)}>
+        {items.map((item) => (
+          <StyleListItem key={item.id} onClick={() => addToForm(item)}>
             <div>{item.name}</div>
             <IconButton
               size={'sm'}
