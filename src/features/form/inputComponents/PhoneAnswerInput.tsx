@@ -3,6 +3,8 @@ import { Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
 import React from 'react';
 
 function PhoneAnswerInput() {
+  //todo: add phone number validation
+  //todo: add phone number formatting
   return (
     <InputGroup>
       <InputLeftElement

@@ -8,7 +8,7 @@ import {
 
 import { useState } from 'react';
 import useAutoSave from '../../../hook/useAutoSave';
-import { ItemProps } from '../../../globalType';
+import { ItemProps } from '~/globalType';
 
 function QuestionInput({ item }: { item: ItemProps }) {
   const [value, setValue] = useState(() => {
